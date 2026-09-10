@@ -1,6 +1,7 @@
 // Precisamos gerar um arquivo access.log fake
 import { createWriteStream, statSync } from 'node:fs'
 import { faker } from '@faker-js/faker'
+
 import { LOG_FILE, LOG_INTERVAL } from './constants.js'
 
 const maxRecords = Number(process.argv[2] || Infinity) //argv se referencia a 3 posicao do comando no terminal

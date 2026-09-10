@@ -1,5 +1,6 @@
 import { createReadStream } from 'node:fs'
 import { createInterface } from 'node:readline'
+
 import { LOG_FILE, LOG_INTERVAL } from './constants.js'
 import { createDb } from './db.js'
 

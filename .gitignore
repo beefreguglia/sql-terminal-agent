@@ -2,4 +2,6 @@ node_modules
 README.md
 *.log
 *.db
-.env
+*.env
+*.env.*
+!.env.example
