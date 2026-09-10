@@ -2,7 +2,8 @@
   "name": "sql_terminal_agent",
   "version": "1.0.0",
   "scripts": {
-    "seed": "node src/seed.js"
+    "seed": "node src/seed.js",
+    "ingest": "node src/ingest.js"
   },
   "license": "ISC",
   "type": "module",

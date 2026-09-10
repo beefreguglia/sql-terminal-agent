@@ -1,9 +1,8 @@
 // Precisamos gerar um arquivo access.log fake
 import { createWriteStream, statSync } from 'node:fs'
 import { faker } from '@faker-js/faker'
+import { LOG_FILE, LOG_INTERVAL } from './constants.js'
 
-const LOG_FILE = 'access.log'
-const LOG_INTERVAL = 1 * 1000 // 1s
 const maxRecords = Number(process.argv[2] || Infinity) //argv se referencia a 3 posicao do comando no terminal
 
 if (
@@ -28,13 +27,14 @@ function generateUser() {
     location: faker.location.city(),
     job_area: faker.person.jobArea(),
     company: faker.company.name(),
-    id: faker.string.uuid(),
+    job_title: faker.person.jobTitle(),
   }
 }
 
 function generateLogEntry(user) {
   return {
     ...user,
+    id: faker.string.uuid(),
     timestamp: faker.date.recent().toISOString(),
   }
 }
