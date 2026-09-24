@@ -6,7 +6,9 @@
     "ingest": "node src/ingest.js",
     "env:setup": "cp .env.example .env",
     "start": "node --env-file=.env.local src/index.js",
-    "dev": "node --watch --env-file=.env.local src/index.js"
+    "dev": "node --watch --env-file=.env.local src/index.js",
+    "test": "node --test --experimental-test-module-mocks ./src/*.spec.js",
+    "test:watch": "node --experimental-test-module-mocks --watch --test ./src/*.spec.js"
   },
   "license": "ISC",
   "type": "module",
