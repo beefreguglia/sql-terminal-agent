@@ -205,7 +205,7 @@ O comando de testes usa `--experimental-test-module-mocks`, por isso o Node exib
 
 ```bash
 npm install
-npm run seed -- 1000
+npm run seed 1000
 npm run ingest
 npm start
 ```
