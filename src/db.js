@@ -21,5 +21,3 @@ export function createDb(path = ":memory:") {
 
   return db
 }
-
-const db = createDb("access_logs.db")

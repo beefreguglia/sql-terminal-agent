@@ -82,3 +82,27 @@ export async function generateSqlObject(question) {
     explanation: experimental_output.explanation,
   };
 }
+
+export async function generateTextAnswer({ question, sql, rows }) {
+  const { text } = await generateText({
+    model,
+    system: `
+      Responda em português, de forma objetiva, apenas com base nos dados retornados.
+      Se o resultado estiver vazio, diga isso claramente.
+    `,
+    prompt: `
+      Pergunta original:
+      ${question}
+
+      SQL executada:
+      ${sql}
+
+      Linhas retornadas em JSON:
+      ${JSON.stringify(rows, null, 2)}
+
+      Resposta:
+    `,
+  });
+
+  return text.trim();
+}

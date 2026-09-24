@@ -4,7 +4,9 @@
   "scripts": {
     "seed": "node src/seed.js",
     "ingest": "node src/ingest.js",
-    "env:setup": "cp .env.example .env"
+    "env:setup": "cp .env.example .env",
+    "start": "node --env-file=.env.local src/index.js",
+    "dev": "node --watch --env-file=.env.local src/index.js"
   },
   "license": "ISC",
   "type": "module",
